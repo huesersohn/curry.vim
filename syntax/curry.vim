@@ -39,7 +39,7 @@ syn match   curryFloat              "\<[0-9]\+\.[0-9]\+\([eE][-+]\=[0-9]\+\)\=\>
 " because otherwise they would match as keywords at the start of a
 " "literate" comment (see lhs.vim).
 syn match curryModule       "\<module\>"
-syn match curryImport       "\<import\>.*"he=s+6 contains=curryImportMod,curryLineComment,curryBlockComment,curryType,curryFunction
+syn match curryImport       "\<import\>.*"he=s+6 contains=curryImportMod,curryLineComment,curryBlockComment,curryOwnType,curryType,curryFunction
 syn match curryImportMod    contained "\<\(as\|qualified\|hiding\)\>"
 syn match curryInfix        "\<\(infix\|infixl\|infixr\)\>"
 syn match curryStructure    "\<\(data\|where\)\>"
@@ -48,7 +48,7 @@ syn match curryTypedef      "\<\(type\|newtype\)\>"
 syn match curryStatement    "\<\(do\|case\|of\|let\|in\)\>"
 syn match curryConditional  "\<\(if\|then\|else\)\>"
 
-syn match curryOwnType  "\<[A-Z][0-9A-Za-z]*\>"
+syn match curryOwnType  "\<[A-Z][0-9A-Za-z_]*\>"
 syn match curryType     "\<\(Bool\|Char\|Either\|Float\|Int\|IO\|Maybe\|Ordering\|String\|Success\)\>"
 
 " Constants from the standard prelude.
@@ -81,7 +81,8 @@ syn match curryFunction "\<\(zip\|zip3\|zipWith\|zipWith3\)\>"
 
 
 " Comments
-syn match   curryLineComment    "---*\([^-!#$%&\*\+./<=>\?@\\^|~].*\)\?$"
+syn keyword curryCommendTodo    TODO FIXME contained
+syn match   curryLineComment    "---*\([^-!#$%&\*\+./<=>\?@\\^|~].*\)\?$" contains=curryCommendTodo
 syn region  curryBlockComment   start="{-"  end="-}" contains=curryBlockComment
 syn region  curryPragma         start="{-#" end="#-}"
 
