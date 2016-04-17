@@ -46,31 +46,32 @@ endsnippet
 
 snippet def "Function definition"
 ${1:name} :: ${2:Type} -> ${3:Type}
+$1 ${4:pattern} = ${5:unknown}
 endsnippet
 
 snippet def[] "Function definition for list patterns"
 ${1:name} :: [${2:Type}] -> ${3:Type}
-$1 [] = ${4:undefined}
-$1 ${5:(x:xs)} = ${6:undefined}
+$1 [] = ${4:unknown}
+$1 ${5:(x:xs)} = ${6:unknown}
 endsnippet
 
 snippet = "Function clause"
-${1:name} ${2:pattern} = ${3:undefined}
+${1:name} ${2:pattern} = ${3:unknown}
 endsnippet
 
 snippet 2= "Function clause"
-${1:name} ${2:pattern} = ${3:undefined}
-$1 ${4:pattern} = ${5:undefined}
+${1:name} ${2:pattern} = ${3:unknown}
+$1 ${4:pattern} = ${5:unknown}
 endsnippet
 
 snippet 3= "Function clause"
-${1:name} ${2:pattern} = ${3:undefined}
-$1 ${4:pattern} = ${5:undefined}
-$1 ${6:pattern} = ${7:undefined}
+${1:name} ${2:pattern} = ${3:unknown}
+$1 ${4:pattern} = ${5:unknown}
+$1 ${6:pattern} = ${7:unknown}
 endsnippet
 
 snippet | "Guard"
-| ${1:predicate} = ${2:undefined}
+| ${1:predicate} = ${2:unknown}
 endsnippet
 
 snippet \ "Lambda expression"

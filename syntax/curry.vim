@@ -43,10 +43,10 @@ syn match curryImport       "\<import\>.*"he=s+6 contains=curryImportMod,curryLi
 syn match curryImportMod    contained "\<\(as\|qualified\|hiding\)\>"
 syn match curryInfix        "\<\(infix\|infixl\|infixr\)\>"
 syn match curryStructure    "\<\(data\|where\)\>"
-                            "\<\(class\|data\|deriving\|instance\|default\|where\)\>"
 syn match curryTypedef      "\<\(type\|newtype\)\>"
 syn match curryStatement    "\<\(do\|case\|of\|let\|in\)\>"
-syn match curryConditional  "\<\(if\|then\|else\)\>"
+syn match curryConditional  "\<\(if\|then\|else\|when\|unless\)\>"
+syn match curryKeyword      "\<free\>"
 
 syn match curryOwnType  "\<[A-Z][0-9A-Za-z_]*\>"
 syn match curryType     "\<\(Bool\|Char\|Either\|Float\|Int\|IO\|Maybe\|Ordering\|String\|Success\)\>"
@@ -54,7 +54,7 @@ syn match curryType     "\<\(Bool\|Char\|Either\|Float\|Int\|IO\|Maybe\|Ordering
 " Constants from the standard prelude.
 syn match curryBoolean  "\<\(True\|False\)\>"
 syn match curryMaybe    "\<\(Nothing\|Just\)\>"
-syn match curryConstant "\<\(Left\|Right\)\>"
+syn match curryEither "\<\(Left\|Right\)\>"
 syn match curryOrdering "\<\(GT\|LT\|EQ\)\>"
 
 " Functions from the standard prelude.
@@ -94,6 +94,7 @@ hi def link curryInfix              PreProc
 hi def link curryStructure          Structure
 hi def link curryStatement          Statement
 hi def link curryConditional        Conditional
+hi def link curryKeyword            Keyword
 hi def link currySpecialChar        SpecialChar
 hi def link curryTypedef            Typedef
 hi def link curryVarSym             curryOperator
@@ -118,6 +119,7 @@ hi def link curryOwnType            Type
 hi def link curryMaybe              curryEnumConst
 hi def link curryOrdering           curryEnumConst
 hi def link curryEnumConst          Constant
+hi def link curryEither             Constant
 hi def link curryFunction           Function
 
 let b:current_syntax = "curry"
