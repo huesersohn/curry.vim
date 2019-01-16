@@ -42,10 +42,10 @@ syn match curryModule       "\<module\>"
 syn match curryImport       "\<import\>.*"he=s+6 contains=curryImportMod,curryLineComment,curryBlockComment,curryOwnType,curryType,curryFunction
 syn match curryImportMod    contained "\<\(as\|qualified\|hiding\)\>"
 syn match curryInfix        "\<\(infix\|infixl\|infixr\)\>"
-syn match curryStructure    "\<\(data\|where\)\>"
+syn match curryStructure    "\<\(class\|data\|deriving\|instance\|where\)\>"
 syn match curryTypedef      "\<\(type\|newtype\)\>"
 syn match curryStatement    "\<\(do\|case\|of\|let\|in\)\>"
-syn match curryConditional  "\<\(if\|then\|else\|when\|unless\)\>"
+syn match curryConditional  "\<\(if\|then\|else\|when\|unless\|whenM\|unlessM\)\>"
 syn match curryKeyword      "\<free\>"
 
 syn match curryOwnType  "\<[A-Z][0-9A-Za-z_]*\>"
